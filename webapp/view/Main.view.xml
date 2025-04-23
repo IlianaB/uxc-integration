@@ -4,27 +4,56 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
+	xmlns:tnt="sap.tnt"
+	xmlns:webc="@ui5/webcomponents"
+	xmlns:webcf="@ui5/webcomponents-fiori"
 	core:require="{
-		formatter: 'uxc/integration/model/formatter'
+		formatter: 'uxc/integration/model/formatter',
+		customer: '@ui5/webcomponents-icons/dist/customer',
+		menu2: '@ui5/webcomponents-icons/dist/menu2',
+		da: '@ui5/webcomponents-icons/dist/da',
+		activities: '@ui5/webcomponents-icons/dist/activities',
+		feedback: '@ui5/webcomponents-icons/dist/feedback'
 	}">
-
-	<Page
-		title="{i18n>appTitle}"
-		id="page">
-		<content>
-			<IllustratedMessage
-				title="{i18n>appTitle}"
-				illustrationType="sapIllus-SuccessHighFive"
-				enableVerticalResponsiveness="true"
-				description="{i18n>appDescription}">
-				<additionalContent>
-					<Button
-						id="helloButton"
-						text="{formatter: 'formatter.formatValue', path: 'i18n>btnText'}"
-						press="sayHello" />
-				</additionalContent>
-			</IllustratedMessage>
-		</content>
-	</Page>
+	<tnt:ToolPage>
+		<tnt:header>
+			<webcf:ShellBar
+				primaryTitle="VEGA CRM"
+				showNotifications="true"
+				notificationsCount="10"
+				notificationsClick=".onNotificationsClick"
+				showProductSwitch="true"
+				showSearchField="true"
+			>
+				<webcf:profile>
+					<webc:Avatar icon="customer" />
+				</webcf:profile>
+				<webcf:startButton>
+					<webc:Button id="toggleMenu" icon="menu2" tooltip="Toggle Side Navigation"
+						click=".onMenuButtonClick" />
+				</webcf:startButton>
+				<webcf:searchField>
+					<webc:Input placeholder="Instructions" valueState="Information" />
+				</webcf:searchField>
+				<webcf:content>
+					<webc:Tag colorScheme="7" text="PR4" />
+					<webc:Text text="PR3" />
+					<webc:Switch textOn="PR0" textOff="PR0" design="Textual" />
+					<webcf:ShellBarSpacer />
+					<webc:ToggleButton text="PR2" />
+					<webc:ToggleButton text="PR1" />
+					<webc:ToggleButton text="PR6" />
+					<webc:ToggleButton text="PR7" />
+					<webc:ToggleButton text="PR8" />
+					<webc:ToggleButton text="PR9" />
+				</webcf:content>
+				<webcf:assistant>
+					<webc:ToggleButton icon="da" text="Assistant" />
+				</webcf:assistant>
+				<webcf:ShellBarItem icon="activities" text="Activities" />
+				<webcf:ShellBarItem icon="feedback" text="Feedback" />
+			</webcf:ShellBar>
+		</tnt:header>
+	</tnt:ToolPage>
 
 </mvc:View>
