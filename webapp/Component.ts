@@ -2,6 +2,9 @@ import UIComponent from "sap/ui/core/UIComponent";
 import models from "./model/models";
 import Device from "sap/ui/Device";
 
+import "@ui5/webcomponents/dist/Assets";
+import "@ui5/webcomponents-fiori/dist/Assets";
+
 /**
  * @namespace uxc.integration
  */

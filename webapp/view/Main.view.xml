@@ -5,53 +5,43 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	xmlns:tnt="sap.tnt"
-	xmlns:webc="@ui5/webcomponents"
-	xmlns:webcf="@ui5/webcomponents-fiori"
+	xmlns:webc="@ui5/webcomponents/dist"
+	xmlns:webcf="@ui5/webcomponents-fiori/dist"
 	core:require="{
 		formatter: 'uxc/integration/model/formatter',
-		customer: '@ui5/webcomponents-icons/dist/customer',
 		menu2: '@ui5/webcomponents-icons/dist/menu2',
-		da: '@ui5/webcomponents-icons/dist/da',
-		activities: '@ui5/webcomponents-icons/dist/activities',
-		feedback: '@ui5/webcomponents-icons/dist/feedback'
+		sysHelp: '@ui5/webcomponents-icons/dist/sys-help',
+		da: '@ui5/webcomponents-icons/dist/da'
 	}">
 	<tnt:ToolPage>
 		<tnt:header>
 			<webcf:ShellBar
 				primaryTitle="VEGA CRM"
 				showNotifications="true"
-				notificationsCount="10"
-				notificationsClick=".onNotificationsClick"
+				notificationsCount="4"
 				showProductSwitch="true"
 				showSearchField="true"
 			>
-				<webcf:profile>
-					<webc:Avatar icon="customer" />
-				</webcf:profile>
 				<webcf:startButton>
-					<webc:Button id="toggleMenu" icon="menu2" tooltip="Toggle Side Navigation"
-						click=".onMenuButtonClick" />
+					<webc:Button icon="menu2" tooltip="Toggle Side Navigation" />
 				</webcf:startButton>
-				<webcf:searchField>
-					<webc:Input placeholder="Instructions" valueState="Information" />
-				</webcf:searchField>
-				<webcf:content>
-					<webc:Tag colorScheme="7" text="PR4" />
-					<webc:Text text="PR3" />
-					<webc:Switch textOn="PR0" textOff="PR0" design="Textual" />
-					<webcf:ShellBarSpacer />
-					<webc:ToggleButton text="PR2" />
-					<webc:ToggleButton text="PR1" />
-					<webc:ToggleButton text="PR6" />
-					<webc:ToggleButton text="PR7" />
-					<webc:ToggleButton text="PR8" />
-					<webc:ToggleButton text="PR9" />
-				</webcf:content>
+
+				<webcf:logo>
+					<Image src="../images/SAP_Logo.svg" alt="Logo" />
+				</webcf:logo>
+
 				<webcf:assistant>
-					<webc:ToggleButton icon="da" text="Assistant" />
+					<webc:ToggleButton icon="da" />
 				</webcf:assistant>
-				<webcf:ShellBarItem icon="activities" text="Activities" />
-				<webcf:ShellBarItem icon="feedback" text="Feedback" />
+
+				<webcf:ShellBarItem icon="sys-help" />
+
+				<webcf:profile>
+					<webc:Avatar>
+						<Image src="../images/Avatar.svg" alt="Avatar" />
+					</webc:Avatar>
+				</webcf:profile>
+
 			</webcf:ShellBar>
 		</tnt:header>
 	</tnt:ToolPage>
