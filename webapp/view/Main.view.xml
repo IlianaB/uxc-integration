@@ -13,7 +13,7 @@
 		sysHelp: '@ui5/webcomponents-icons/dist/sys-help',
 		da: '@ui5/webcomponents-icons/dist/da'
 	}">
-	<tnt:ToolPage>
+	<tnt:ToolPage id="toolPage">
 		<tnt:header>
 			<webcf:ShellBar
 				primaryTitle="VEGA CRM"
@@ -23,7 +23,8 @@
 				showSearchField="true"
 			>
 				<webcf:startButton>
-					<webc:Button icon="menu2" tooltip="Toggle Side Navigation" />
+					<webc:Button id="toggleMenu" icon="menu2" tooltip="Toggle Side Navigation"
+						click=".onMenuButtonClick" />
 				</webcf:startButton>
 
 				<webcf:logo>
@@ -52,6 +53,60 @@
 				</webcf:profile>
 			</webcf:ShellBar>
 		</tnt:header>
+
+		<tnt:sideContent>
+			<tnt:SideNavigation
+				id="sideNavigation"
+				ariaLabel="Main"
+				expanded="true"
+				selectedKey="home"
+				width="18rem">
+				<tnt:NavigationList>
+					<tnt:NavigationListItem key="home" text="Home" icon="home" />
+					<tnt:NavigationListItem text="Favorites" expanded="true" icon="favorite-list"
+						selectable="false">
+						<tnt:NavigationListItem text="My Accounts" />
+						<tnt:NavigationListItem text="My Orders" />
+					</tnt:NavigationListItem>
+					<tnt:NavigationListItem text="Customer Management" icon="account" expanded="true"
+						selectable="false">
+						<tnt:NavigationListItem text="Contacts" />
+						<tnt:NavigationListItem text="Companies" />
+						<tnt:NavigationListItem text="Partners" />
+					</tnt:NavigationListItem>
+					<tnt:NavigationListItem text="Sales" icon="crm-sales" expanded="true" selectable="false">
+						<tnt:NavigationListItem text="Leads" />
+						<tnt:NavigationListItem text="Opportunuties" />
+						<tnt:NavigationListItem text="Quotes" />
+						<tnt:NavigationListItem text="Orders" />
+						<tnt:NavigationListItem text="Invoices" />
+					</tnt:NavigationListItem>
+					<tnt:NavigationListItem text="Products" icon="s4hana" expanded="true" selectable="false">
+						<tnt:NavigationListItem text="Product Catalog" />
+						<tnt:NavigationListItem text="Pricing" />
+						<tnt:NavigationListItem text="Inventory Management" />
+					</tnt:NavigationListItem>
+					<tnt:NavigationListItem text="Marketing" icon="business-by-design" expanded="true"
+						selectable="false">
+						<tnt:NavigationListItem text="Campaigns" />
+						<tnt:NavigationListItem text="E-Mail Marketing" />
+						<tnt:NavigationListItem text="Marketing Automation" />
+					</tnt:NavigationListItem>
+					<tnt:NavigationListItem text="Reports" icon="manager-insight" expanded="true"
+						selectable="false">
+						<tnt:NavigationListItem text="Sales Reports" />
+						<tnt:NavigationListItem text="Customer Reports" />
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+				<tnt:fixedItem>
+					<tnt:NavigationList>
+						<tnt:NavigationListItem text="Quick Create" icon="add" design="Action"
+							selectable="false" />
+						<tnt:NavigationListItem text="Product Settings" icon="settings" />
+					</tnt:NavigationList>
+				</tnt:fixedItem>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
 	</tnt:ToolPage>
 
 </mvc:View>
