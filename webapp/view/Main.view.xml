@@ -30,18 +30,26 @@
 					<Image src="../images/SAP_Logo.svg" alt="Logo" />
 				</webcf:logo>
 
+				<webcf:content>
+					<webc:Tag design="Set2" colorScheme="7" text="Trial" />
+					<webc:Text text="30 days remaining" />
+				</webcf:content>
+
+				<webcf:searchField>
+					<webcf:ShellBarSearch showClearIcon="true" placeholder="Search" />
+				</webcf:searchField>
+
 				<webcf:assistant>
-					<webc:ToggleButton icon="da" />
+					<webc:ToggleButton icon="da" tooltip="Assistant" />
 				</webcf:assistant>
 
-				<webcf:ShellBarItem icon="sys-help" />
+				<webcf:ShellBarItem icon="sys-help" text="Help" />
 
 				<webcf:profile>
 					<webc:Avatar>
 						<Image src="../images/Avatar.svg" alt="Avatar" />
 					</webc:Avatar>
 				</webcf:profile>
-
 			</webcf:ShellBar>
 		</tnt:header>
 	</tnt:ToolPage>
