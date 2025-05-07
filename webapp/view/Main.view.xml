@@ -19,6 +19,7 @@
 				primaryTitle="VEGA CRM"
 				showNotifications="true"
 				notificationsCount="4"
+				notificationsClick=".onNotificationsClick"
 				showProductSwitch="true"
 				showSearchField="true"
 			>
@@ -109,4 +110,5 @@
 		</tnt:sideContent>
 	</tnt:ToolPage>
 
+	<mvc:XMLView id="notificationsView" viewName="uxc.integration.view.Notifications" />
 </mvc:View>

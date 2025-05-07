@@ -1,9 +1,12 @@
 import BaseController from "./BaseController";
 import Device from "sap/ui/Device";
+import XMLView from "sap/ui/core/mvc/XMLView";
 import Fragment from "sap/ui/core/Fragment";
 import ToolPage from "sap/tnt/ToolPage";
 import SideNavigation from "sap/tnt/SideNavigation";
 import Popover from "sap/m/Popover";
+import WebCPopover from "@ui5/webcomponents/dist/Popover";
+import { ShellBar$NotificationsClickEvent } from "sap/ui/webc/fiori/ShellBar";
 
 /**
  * @namespace uxc.integration.controller
@@ -50,5 +53,14 @@ export default class Main extends BaseController {
 		} else {
 			popover.openBy(menuButton);
 		}
+	}
+
+	onNotificationsClick(e: ShellBar$NotificationsClickEvent): void {
+		const view = this.getView().byId("notificationsView") as XMLView;
+		const popover = view.byId("notificationsPopover").getDomRef() as WebCPopover;
+
+		e.preventDefault();
+		popover.opener = e.getParameter("targetRef");
+		popover.open = true;
 	}
 }
