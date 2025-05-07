@@ -14,6 +14,7 @@
 				showNotifications="true"
 				notificationsCount="4"
 				notificationsClick=".onNotificationsClick"
+				profileClick=".onProfileClick"
 				showProductSwitch="true"
 				showSearchField="true"
 			>
@@ -42,7 +43,7 @@
 				<webcf:ShellBarItem icon="sys-help" text="Help" />
 
 				<webcf:profile>
-					<webc:Avatar>
+					<webc:Avatar id="profileAvatar">
 						<Image src="../images/Avatar.svg" alt="Avatar" />
 					</webc:Avatar>
 				</webcf:profile>
@@ -104,5 +105,25 @@
 		</tnt:sideContent>
 	</tnt:ToolPage>
 
+	<webcf:UserMenu id="userProfileMenu" opener="profileAvatar" showManageAccount="true"
+		showOtherAccounts="true" showEditAccounts="true" showEditButton="true">
+		<webcf:accounts>
+			<webcf:UserMenuAccount titleText="Alain Chevalier" subtitleText="alian.chevalier@sap.com"
+				description="Delivery Manager, SAP SE" avatarSrc="../images/Avatar.svg" selected="true" />
+			<webcf:UserMenuAccount titleText="John Walker" subtitleText="john.walker@sap.com"
+				description="Project Manager" avatarInitials="JW" />
+			<webcf:UserMenuAccount titleText="David Wilson" subtitleText="david.wilson@sap.com"
+				description="Project Manager" />
+		</webcf:accounts>
+		<webcf:UserMenuItem text="Setting" icon="action-settings" />
+		<webcf:UserMenuItem text="Legal Information" icon="official-service">
+			<webcf:UserMenuItem text="Terms of Use">
+			</webcf:UserMenuItem>
+			<webcf:UserMenuItem text="Private Policy" />
+		</webcf:UserMenuItem>
+		<webcf:UserMenuItem text="About" icon="message-information" />
+	</webcf:UserMenu>
+
 	<mvc:XMLView id="notificationsView" viewName="uxc.integration.view.Notifications" />
+	<core:Fragment id="userSettingsDialog" fragmentName="uxc.integration.fragments.UserSettingsDialog" />
 </mvc:View>

@@ -5,13 +5,22 @@ import Fragment from "sap/ui/core/Fragment";
 import ToolPage from "sap/tnt/ToolPage";
 import SideNavigation from "sap/tnt/SideNavigation";
 import Popover from "sap/m/Popover";
+
 import WebCPopover from "@ui5/webcomponents/dist/Popover";
 import { ShellBar$NotificationsClickEvent } from "sap/ui/webc/fiori/ShellBar";
+
+import WebCUserMenu from "@ui5/webcomponents-fiori/dist/UserMenu";
+import WebCUserSettingsDialog from "@ui5/webcomponents-fiori/dist/UserSettingsDialog";
 
 // Icons
 import "@ui5/webcomponents-icons/dist/menu2";
 import "@ui5/webcomponents-icons/dist/sys-help";
 import "@ui5/webcomponents-icons/dist/da";
+import "@ui5/webcomponents-icons/dist/action-settings";
+import "@ui5/webcomponents-icons/dist/official-service";
+import "@ui5/webcomponents-icons/dist/message-information";
+import "@ui5/webcomponents-icons/dist/palette";
+
 
 /**
  * @namespace uxc.integration.controller
@@ -67,5 +76,32 @@ export default class Main extends BaseController {
 		e.preventDefault();
 		popover.opener = e.getParameter("targetRef");
 		popover.open = true;
+	}
+
+	async onProfileClick(): Promise<void> {
+		const userMenu = this.getView().byId("userProfileMenu").getDomRef() as WebCUserMenu;
+		userMenu.open = true;
+
+		let settingsDialog = this.getView().byId("settings");
+		if (!settingsDialog) {
+			settingsDialog = await Fragment.load({
+				id: this.getView().getId(),
+				name: "uxc.integration.fragments.UserSettingsDialog",
+				controller: this
+			}) as unknown as WebCUserSettingsDialog;
+
+			this.getView().addDependent(settingsDialog);
+		}
+
+		userMenu.addEventListener("item-click", async function (event) {
+			const item = event?.detail.item.text;
+			let settingsDialog = this.getView().byId("userSettingsDialog--settings") as WebCUserSettingsDialog;
+			switch (item) {
+				case "Setting":
+					if (!settingsDialog.getOpen()) {
+						settingsDialog.setOpen(true);
+					}
+			}
+		}.bind(this));
 	}
 }
