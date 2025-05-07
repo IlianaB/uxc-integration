@@ -8,6 +8,11 @@ import Popover from "sap/m/Popover";
 import WebCPopover from "@ui5/webcomponents/dist/Popover";
 import { ShellBar$NotificationsClickEvent } from "sap/ui/webc/fiori/ShellBar";
 
+// Icons
+import "@ui5/webcomponents-icons/dist/menu2";
+import "@ui5/webcomponents-icons/dist/sys-help";
+import "@ui5/webcomponents-icons/dist/da";
+
 /**
  * @namespace uxc.integration.controller
  */

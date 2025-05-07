@@ -1,5 +1,6 @@
 import BaseController from "./BaseController";
 
+// Icons
 import "@ui5/webcomponents-icons/dist/sort"
 import "@ui5/webcomponents-icons/dist/action-settings"
 import "@ui5/webcomponents-icons/dist/crm-sales";
