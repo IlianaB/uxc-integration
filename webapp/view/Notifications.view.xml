@@ -4,7 +4,6 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
-	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:webc="@ui5/webcomponents/dist"
 	xmlns:webcf="@ui5/webcomponents-fiori/dist">
 
@@ -21,14 +20,15 @@
 				</webc:startContent>
 
 				<webc:endContent>
-					<webc:Button id="clear-all" design="Transparent" text="Clear All" tooltip="Clear All" />
-					<webc:Button id="btn-sort" design="Transparent" icon="sort" tooltip="Sort" />
+					<webc:Button design="Transparent" text="Clear All"
+						tooltip="Clear All" click=".onClearAllNotifications" />
+					<webc:Button design="Transparent" icon="sort" tooltip="Sort" />
 					<webc:Button design="Transparent" icon="action-settings" tooltip="Go to settings" />
 				</webc:endContent>
 			</webc:Bar>
 		</webc:header>
 
-		<webcf:NotificationList class="notificationsPopoverList">
+		<webcf:NotificationList id="notificationsPopoverList" class="notificationsPopoverList">
 			<webcf:NotificationListGroupItem id="notificationsListGroupGrowing"
 				titleText="Today"
 				loadingDelay="0"
@@ -230,5 +230,7 @@
 				</webcf:NotificationListItem>
 			</webcf:NotificationListGroupItem>
 		</webcf:NotificationList>
+
+		<webcf:IllustratedMessage id="emptyNotificationsMessage" name="NoNotifications" visible="false" />
 	</webc:ResponsivePopover>
 </mvc:View>

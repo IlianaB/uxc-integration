@@ -56,7 +56,8 @@
 				ariaLabel="Main"
 				expanded="true"
 				selectedKey="home"
-				width="18rem">
+				width="18rem"
+				itemSelect=".onItemSelect">
 				<tnt:NavigationList>
 					<tnt:NavigationListItem key="home" text="Home" icon="home" />
 					<tnt:NavigationListItem text="Favorites" expanded="true" icon="favorite-list"
@@ -97,12 +98,19 @@
 				<tnt:fixedItem>
 					<tnt:NavigationList>
 						<tnt:NavigationListItem text="Quick Create" icon="add" design="Action"
-							selectable="false" />
+							selectable="false" press=".onQuickCreate" />
 						<tnt:NavigationListItem text="Product Settings" icon="settings" />
 					</tnt:NavigationList>
 				</tnt:fixedItem>
 			</tnt:SideNavigation>
 		</tnt:sideContent>
+
+		<tnt:mainContents>
+			<VBox class="sapUiSmallMargin">
+				<Title id="contentTitle" text="Home" />
+				<Text text="Content..." />
+			</VBox>
+		</tnt:mainContents>
 	</tnt:ToolPage>
 
 	<webcf:UserMenu id="userProfileMenu" opener="profileAvatar" showManageAccount="true"
