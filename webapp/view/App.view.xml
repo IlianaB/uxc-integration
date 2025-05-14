@@ -17,6 +17,7 @@
 						notificationsCount="{appView>/notificationsCount}"
 						notificationsClick=".onNotificationsClick"
 						profileClick=".onProfileClick"
+						logoClick=".onLogoClick"
 						showProductSwitch="true"
 						showSearchField="true"
 					>

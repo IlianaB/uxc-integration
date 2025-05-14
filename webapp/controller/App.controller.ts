@@ -94,6 +94,17 @@ export default class App extends BaseController {
 	}
 
 	/**
+	 * Called when the user clicks on the logo button.
+	 */
+	onLogoClick(): void {
+		const sideNav = this.getView().byId("sideNavigation") as SideNavigation;
+		const contentTitle = this.getView().byId("contentTitle") as Title;
+
+		sideNav.setSelectedKey("home");
+		contentTitle.setText("Home");
+	}
+
+	/**
 	 * Called when opening the side navigation in overlay mode.
 	 */
 	async openNavigationInOverlay(menuButton: HTMLElement): Promise<void> {
