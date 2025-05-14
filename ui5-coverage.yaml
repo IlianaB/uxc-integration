@@ -26,13 +26,13 @@ server:
         babelConfig:
           sourceMaps: true
           ignore:
-          - "**/*.d.ts"
+            - "**/*.d.ts"
           presets:
-          - - "@babel/preset-env"
-            - targets: defaults
-          - - transform-ui5
-          - "@babel/preset-typescript"
+            - - "@babel/preset-env"
+              - targets: defaults
+            - - transform-ui5
+            - "@babel/preset-typescript"
           plugins:
-          - istanbul
+            - istanbul
     - name: ui5-middleware-livereload
       afterMiddleware: compression

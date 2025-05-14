@@ -1,4 +1,5 @@
 import BaseController from "./BaseController";
+import JSONModel from "sap/ui/model/json/JSONModel";
 import NotificationList from "sap/m/NotificationList";
 import IllustratedMessage from "sap/m/IllustratedMessage";
 
@@ -26,6 +27,12 @@ export default class Notifications extends BaseController {
 		// Show the empty message
 		if (oEmptyMessage && oEmptyMessage.setVisible) {
 			oEmptyMessage.setVisible(true);
+		}
+
+		// Set notification count to 0 in the global app view model
+		const oAppViewModel = this.getView().getModel("appView") as JSONModel;
+		if (oAppViewModel) {
+			oAppViewModel.setProperty("/notificationsCount", 0);
 		}
 	}
 }

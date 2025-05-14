@@ -58,28 +58,6 @@
 					"async": true
 				}
 			}
-		},
-		"routing": {
-			"config": {
-				"routerClass": "sap.m.routing.Router",
-				"viewType": "XML",
-				"path": "uxc.integration.view",
-				"controlId": "app",
-				"controlAggregation": "pages"
-			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "main",
-					"target": "main"
-				}
-			],
-			"targets": {
-				"main": {
-					"viewId": "main",
-					"viewName": "Main"
-				}
-			}
 		}
 	}
 }

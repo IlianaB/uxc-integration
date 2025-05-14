@@ -15,7 +15,8 @@
 			id="sideNavInOverlay"
 			width="18rem"
 			selectedKey="home"
-			design="Plain">
+			design="Plain"
+			itemSelect=".onItemSelect">
 			<tnt:NavigationList>
 				<tnt:NavigationListItem key="home" text="Home" icon="home" />
 				<tnt:NavigationListItem text="Favorites" expanded="true" icon="favorite-list"
