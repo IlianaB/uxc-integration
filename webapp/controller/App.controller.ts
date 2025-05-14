@@ -4,6 +4,7 @@ import Device from "sap/ui/Device";
 import XMLView from "sap/ui/core/mvc/XMLView";
 import Fragment from "sap/ui/core/Fragment";
 import JSONModel from "sap/ui/model/json/JSONModel";
+import Log from "sap/base/Log";
 import Text from "sap/m/Text";
 import Title from "sap/m/Title";
 import Button from "sap/m/Button";
@@ -39,6 +40,8 @@ export default class App extends BaseController {
 	 * Called when the controller is instantiated.
 	 */
 	onInit() {
+		Log.setLevel(Log.Level.ERROR);
+
 		this.applyContentDensity();
 		this.initViewModel();
 		this.initOverlayNav();
@@ -170,10 +173,16 @@ export default class App extends BaseController {
 	 */
 	onItemSelect(event: SideNavigation$ItemSelectEvent): void {
 		const item = event.getParameter("item") as NavigationListItem;
+		const key = item.getKey();
 		const text = item.getText();
 
+		// Update the title
 		const contentTitle = this.getView().byId("contentTitle") as Title;
 		contentTitle.setText(text);
+
+		// Set the selectedKey to avoid the warning
+		const sideNav = this.getView().byId("sideNavigation") as SideNavigation;
+		sideNav.setSelectedKey(key);
 
 		// if in popover - close the popover
 		const popover = this.getView().byId("sideNavPopover") as Popover;
