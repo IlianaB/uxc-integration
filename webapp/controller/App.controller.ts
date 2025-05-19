@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import BaseController from "./BaseController";
+import UI5Element from "sap/ui/core/Element";
 import Device from "sap/ui/Device";
 import XMLView from "sap/ui/core/mvc/XMLView";
 import Fragment from "sap/ui/core/Fragment";
@@ -9,16 +10,17 @@ import Text from "sap/m/Text";
 import Title from "sap/m/Title";
 import Button from "sap/m/Button";
 import Dialog from "sap/m/Dialog";
-import Popover from "sap/m/Popover";
+import ResponsivePopover from "sap/m/ResponsivePopover";
 import ToolPage from "sap/tnt/ToolPage";
 import SideNavigation, { SideNavigation$ItemSelectEvent } from "sap/tnt/SideNavigation";
 import NavigationListItem from "sap/tnt/NavigationListItem";
 
+// UI5 Web Components
+import WebCButton from "@ui5/webcomponents/dist/Button";
 import WebCPopover from "@ui5/webcomponents/dist/Popover";
+import WebCFUserMenu, { UserMenuItemClickEventDetail } from "@ui5/webcomponents-fiori/dist/UserMenu";
+import WebCFUserSettingsDialog from "@ui5/webcomponents-fiori/dist/UserSettingsDialog";
 import { ShellBar$NotificationsClickEvent } from "sap/ui/webc/fiori/ShellBar";
-
-import WebCUserMenu, { UserMenuItemClickEventDetail } from "@ui5/webcomponents-fiori/dist/UserMenu";
-import WebCUserSettingsDialog from "@ui5/webcomponents-fiori/dist/UserSettingsDialog";
 
 // Icons
 import "@ui5/webcomponents-icons/dist/menu2";
@@ -83,13 +85,13 @@ export default class App extends BaseController {
 	 * Called when the user clicks on the menu button.
 	 * This is used to toggle the side navigation.
 	 */
-	onMenuButtonClick(): void {
+	async onMenuButtonClick(): Promise<void> {
 		if (!this.useOverlayNav) {
 			const toolPage = this.getView().byId("toolPage") as ToolPage;
 			toolPage.setSideExpanded(!toolPage.getSideExpanded());
 		} else {
-			const menuButton = this.getView().byId("toggleMenu").getDomRef() as HTMLElement;
-			void this.openNavigationInOverlay(menuButton);
+			const menuButton = this.getView().byId("toggleMenu").getDomRef() as WebCButton;
+			await this.openNavigationInOverlay(menuButton);
 		}
 	}
 
@@ -107,15 +109,15 @@ export default class App extends BaseController {
 	/**
 	 * Called when opening the side navigation in overlay mode.
 	 */
-	async openNavigationInOverlay(menuButton: HTMLElement): Promise<void> {
-		let popover = this.getView().byId("sideNavPopover") as Popover;
+	async openNavigationInOverlay(menuButton: WebCButton): Promise<void> {
+		let popover = this.getView().byId("sideNavPopover") as ResponsivePopover;
 		if (!popover) {
 			popover = await Fragment.load({
 				id: this.getView().getId(),
 				name: "uxc.integration.fragments.SideNavPopover",
 				type: "XML",
 				controller: this
-			}) as Popover;
+			}) as ResponsivePopover;
 
 			this.getView().addDependent(popover);
 			popover.setShowHeader(Device.system.phone);
@@ -145,25 +147,26 @@ export default class App extends BaseController {
 	 * This is used to open the user settings dialog.
 	 */
 	async onProfileClick(): Promise<void> {
-		const userMenu = this.getView().byId("userProfileMenu").getDomRef() as WebCUserMenu;
+		const userMenu = this.getView().byId("userProfileMenu").getDomRef() as WebCFUserMenu;
 		userMenu.open = true;
 
-		let settingsDialog = this.getView().byId("settings") as Dialog;
+		let settingsDialog = this.getView().byId("settings") as unknown as WebCFUserSettingsDialog;
 		if (!settingsDialog) {
-			settingsDialog = await Fragment.load({
+			const dialogFragment = await Fragment.load({
 				id: this.getView().getId(),
 				name: "uxc.integration.fragments.UserSettingsDialog",
 				controller: this
-			}) as Dialog;
-
-			this.getView().addDependent(settingsDialog);
+			});
+			// Add as dependent (expects UI5Element)
+			this.getView().addDependent(dialogFragment as unknown as UI5Element);
+			settingsDialog = dialogFragment as unknown as WebCFUserSettingsDialog;
 		}
 
 		if (!this.userMenuListenerAdded) {
 			userMenu.addEventListener("item-click", (event: Event) => {
 				const customEvent = event as CustomEvent<UserMenuItemClickEventDetail>;
 				const item = customEvent.detail?.item.text;
-				const settingsDialog = this.getView().byId("userSettingsDialog--settings") as unknown as WebCUserSettingsDialog;
+				const settingsDialog = this.getView().byId("userSettingsDialog--settings") as unknown as WebCFUserSettingsDialog;
 
 				switch (item) {
 					case "Setting":
@@ -196,7 +199,7 @@ export default class App extends BaseController {
 		sideNav.setSelectedKey(key);
 
 		// if in popover - close the popover
-		const popover = this.getView().byId("sideNavPopover") as Popover;
+		const popover = this.getView().byId("sideNavPopover") as ResponsivePopover;
 		if (popover?.isOpen()) {
 			popover.close();
 		}

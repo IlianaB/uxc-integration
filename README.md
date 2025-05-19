@@ -1,12 +1,8 @@
-# UI5 Application uxc.integration
-
-Insert the purpose of this project and some interesting info here...
+# UXC Seamless Integration Sample App
 
 ## Description
 
-This app demonstrates a TypeScript setup for developing UI5 applications. The central entry point for all information about using TypeScript with UI5 is at [https://sap.github.io/ui5-typescript](https://sap.github.io/ui5-typescript).
-
-**The template is inspired by the [`SAP-samples/ui5-typescript-helloworld`](https://github.com/SAP-samples/ui5-typescript-helloworld) project which also contains [a detailed step-by-step guide](https://github.com/SAP-samples/ui5-typescript-helloworld/blob/main/step-by-step.md). It explains how this setup is created and how all the bits and pieces fit together.**
+This app demonstrates how to use the [UI5 Web Components](https://sap.github.io/ui5-webcomponents/) in a UI5 application.
 
 ## Requirements
 
