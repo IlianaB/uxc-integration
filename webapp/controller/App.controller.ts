@@ -49,6 +49,21 @@ export default class App extends BaseController {
 		this.initOverlayNav();
 	}
 
+	onAfterRendering() {
+		// Temporary fix for the issue with the side navigation not scrolling to the top
+		// Scroll the SideNavigation's NavigationList to the top
+		setTimeout(() => {
+			const sideNav = this.getView().byId("sideNavigation");
+			if (sideNav) {
+				// Find the DOM element with class 'sapTntNL'
+				const navList = sideNav.getDomRef()?.querySelector(".sapTntNL");
+				if (navList) {
+					navList.scrollTop = 0;
+				}
+			}
+		}, 0);
+	}
+
 	/**
 	 * Applies the content density mode to the view.
 	 */
