@@ -96,6 +96,16 @@ export default class App extends BaseController {
 	}
 
 	/**
+	 * Closes the side navigation on phone devices for better UX.
+	 */
+	closeSideNavigationOnPhone(): void {
+		if (Device.system.phone && !this.useOverlayNav) {
+			const toolPage = this.getView().byId("toolPage") as ToolPage;
+			toolPage.setSideExpanded(false);
+		}
+	}
+
+	/**
 	 * Called when the user clicks on the logo button.
 	 */
 	onLogoClick(): void {
@@ -104,6 +114,8 @@ export default class App extends BaseController {
 
 		sideNav.setSelectedKey("home");
 		contentTitle.setText("Home");
+
+		this.closeSideNavigationOnPhone();
 	}
 
 	/**
@@ -203,6 +215,8 @@ export default class App extends BaseController {
 		if (popover?.isOpen()) {
 			popover.close();
 		}
+
+		this.closeSideNavigationOnPhone();
 	}
 
 	/**
