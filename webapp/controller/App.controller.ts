@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import BaseController from "./BaseController";
+import BaseController from "uxc/integration/controller/BaseController";
 import UI5Element from "sap/ui/core/Element";
 import Device from "sap/ui/Device";
 import XMLView from "sap/ui/core/mvc/XMLView";

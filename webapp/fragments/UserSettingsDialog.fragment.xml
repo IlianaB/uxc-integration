@@ -13,7 +13,7 @@
 					<FlexBox direction="Column" alignItems="Center" justifyContent="SpaceBetween"
 						gap="0.625rem">
 						<webc:Avatar size="XL">
-							<Image src="../images/Avatar.svg" alt="Avatar" />
+							<Image src="images/Avatar.svg" alt="Avatar" />
 						</webc:Avatar>
 						<FlexBox direction="Column" alignItems="Center" justifyContent="SpaceBetween">
 							<Title text="Alain Chevalier" />

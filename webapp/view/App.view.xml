@@ -27,7 +27,7 @@
 						</webcf:startButton>
 
 						<webcf:logo>
-							<Image src="../images/SAP_Logo.svg" alt="Logo" />
+							<Image src="images/SAP_Logo.svg" alt="Logo" />
 						</webcf:logo>
 
 						<webcf:content>
@@ -47,7 +47,7 @@
 
 						<webcf:profile>
 							<webc:Avatar id="profileAvatar">
-								<Image src="../images/Avatar.svg" alt="Avatar" />
+								<Image src="images/Avatar.svg" alt="Avatar" />
 							</webc:Avatar>
 						</webcf:profile>
 					</webcf:ShellBar>
@@ -122,7 +122,7 @@
 				showOtherAccounts="true" showEditAccounts="true" showEditButton="true">
 				<webcf:accounts>
 					<webcf:UserMenuAccount titleText="Alain Chevalier" subtitleText="alian.chevalier@sap.com"
-						description="Delivery Manager, SAP SE" avatarSrc="../images/Avatar.svg" selected="true" />
+						description="Delivery Manager, SAP SE" avatarSrc="images/Avatar.svg" selected="true" />
 					<webcf:UserMenuAccount titleText="John Walker" subtitleText="john.walker@sap.com"
 						description="Project Manager" avatarInitials="JW" />
 					<webcf:UserMenuAccount titleText="David Wilson" subtitleText="david.wilson@sap.com"

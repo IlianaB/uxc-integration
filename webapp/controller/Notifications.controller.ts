@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import BaseController from "./BaseController";
+import BaseController from "uxc/integration/controller/BaseController";
 import JSONModel from "sap/ui/model/json/JSONModel";
 
 // UI5 Web Components
