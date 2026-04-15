@@ -1,0 +1,2 @@
+sap.ui.define(["exports","uxc/integration/thirdparty/i18n3","uxc/integration/thirdparty/LocaleData","uxc/integration/thirdparty/i18n","uxc/integration/thirdparty/Theme"],function(t,i,r,e,n){"use strict";const a=true;t.__esModule=a});
+//# sourceMappingURL=Assets.js.map

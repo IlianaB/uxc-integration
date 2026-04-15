@@ -1,0 +1,2 @@
+sap.ui.define(["uxc/integration/thirdparty/webcomponents-fiori","uxc/integration/thirdparty/Theme","uxc/integration/thirdparty/Icons","uxc/integration/thirdparty/i18n","uxc/integration/thirdparty/LocaleData"],function(t,i,r,n,a){"use strict";return t.PackageModule});
+//# sourceMappingURL=webcomponents-base.js.map

@@ -1,0 +1,5 @@
+/*!
+ * ${copyright}
+ */
+sap.ui.define(["sap/ui/core/webc/WebComponent","uxc/integration/thirdparty/@ui5/webcomponents","uxc/integration/thirdparty/Text"],function(e){"use strict";const t=e.extend("uxc.integration.thirdparty.@ui5.webcomponents.dist.Text",{metadata:{namespace:"@ui5/webcomponents",qualifiedNamespace:"uxc.integration.thirdparty.@ui5.webcomponents",tag:"ui5-text-90cc6878",interfaces:[],properties:{maxLines:{type:"float",mapping:"property",defaultValue:null},emptyIndicatorMode:{type:"uxc.integration.thirdparty.@ui5.webcomponents.TextEmptyIndicatorMode",mapping:"property",defaultValue:"Off"},text:{type:"string",mapping:"textContent"},width:{type:"sap.ui.core.CSSSize",mapping:"style"},height:{type:"sap.ui.core.CSSSize",mapping:"style"}},aggregations:{},associations:{},events:{},getters:[],methods:[],library:"@ui5/webcomponents.library",designtime:"@ui5/webcomponents/designtime/Text.designtime"}});return t});
+//# sourceMappingURL=Text.js.map

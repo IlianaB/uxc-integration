@@ -1,0 +1,90 @@
+/*!
+ * ${copyright}
+ */
+sap.ui.define([
+  "sap/ui/core/webc/WebComponent",
+  "uxc/integration/thirdparty/@ui5/webcomponents-fiori",
+  "uxc/integration/thirdparty/UserSettingsDialog",
+], function(
+  WebComponentBaseClass,
+) {
+  "use strict";
+
+
+  const WrapperClass = WebComponentBaseClass.extend("uxc.integration.thirdparty.@ui5.webcomponents-fiori.dist.UserSettingsDialog", {
+    metadata:
+{
+  "namespace": "@ui5/webcomponents-fiori",
+  "qualifiedNamespace": "uxc.integration.thirdparty.@ui5.webcomponents-fiori",
+  "tag": "ui5-user-settings-dialog-90cc6878",
+  "interfaces": [],
+  "properties": {
+    "open": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "headerText": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "showSearchField": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "text": {
+      "type": "string",
+      "mapping": "textContent"
+    },
+    "width": {
+      "type": "sap.ui.core.CSSSize",
+      "mapping": "style"
+    },
+    "height": {
+      "type": "sap.ui.core.CSSSize",
+      "mapping": "style"
+    }
+  },
+  "aggregations": {
+    "items": {
+      "type": "sap.ui.core.Control",
+      "multiple": true
+    },
+    "fixedItems": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "fixedItems"
+    }
+  },
+  "associations": {},
+  "events": {
+    "selectionChange": {
+      "parameters": {
+        "item": {
+          "type": "any"
+        }
+      }
+    },
+    "open": {
+      "parameters": {}
+    },
+    "beforeClose": {
+      "parameters": {}
+    },
+    "close": {
+      "parameters": {}
+    }
+  },
+  "getters": [],
+  "methods": [],
+  "defaultAggregation": "items",
+  "library": "@ui5/webcomponents-fiori.library",
+  "designtime": "@ui5/webcomponents-fiori/designtime/UserSettingsDialog.designtime"
+}
+  });
+
+
+  return WrapperClass;
+
+});

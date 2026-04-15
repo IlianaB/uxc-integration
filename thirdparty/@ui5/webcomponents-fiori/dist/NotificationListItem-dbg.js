@@ -1,0 +1,104 @@
+/*!
+ * ${copyright}
+ */
+sap.ui.define([
+  "uxc/integration/thirdparty/@ui5/webcomponents-fiori/dist/NotificationListItemBase",
+  "uxc/integration/thirdparty/@ui5/webcomponents-fiori",
+  "uxc/integration/thirdparty/NotificationListItem",
+], function(
+  WebComponentBaseClass,
+) {
+  "use strict";
+
+
+  const WrapperClass = WebComponentBaseClass.extend("uxc.integration.thirdparty.@ui5.webcomponents-fiori.dist.NotificationListItem", {
+    metadata:
+{
+  "namespace": "@ui5/webcomponents-fiori",
+  "qualifiedNamespace": "uxc.integration.thirdparty.@ui5.webcomponents-fiori",
+  "tag": "ui5-li-notification-90cc6878",
+  "interfaces": [],
+  "properties": {
+    "wrappingType": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents.WrappingType",
+      "mapping": "property",
+      "defaultValue": "None"
+    },
+    "state": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents-base.ValueState",
+      "mapping": "property",
+      "defaultValue": "None"
+    },
+    "showClose": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "importance": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents-fiori.NotificationListItemImportance",
+      "mapping": "property",
+      "defaultValue": "Standard"
+    },
+    "titleText": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "read": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "loading": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "loadingDelay": {
+      "type": "float",
+      "mapping": "property",
+      "defaultValue": 1000
+    }
+  },
+  "aggregations": {
+    "avatar": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "avatar"
+    },
+    "menu": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "menu"
+    },
+    "footnotes": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "footnotes"
+    },
+    "description": {
+      "type": "sap.ui.core.Control",
+      "multiple": true
+    }
+  },
+  "associations": {},
+  "events": {
+    "close": {
+      "parameters": {
+        "item": {
+          "type": "HTMLElement"
+        }
+      }
+    }
+  },
+  "getters": [],
+  "methods": [],
+  "defaultAggregation": "description",
+  "library": "@ui5/webcomponents-fiori.library",
+  "designtime": "@ui5/webcomponents-fiori/designtime/NotificationListItem.designtime"
+}
+  });
+
+
+  return WrapperClass;
+
+});

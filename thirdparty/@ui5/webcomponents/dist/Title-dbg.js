@@ -1,0 +1,69 @@
+/*!
+ * ${copyright}
+ */
+sap.ui.define([
+  "sap/ui/core/webc/WebComponent",
+  "uxc/integration/thirdparty/@ui5/webcomponents",
+  "uxc/integration/thirdparty/Title",
+], function(
+  WebComponentBaseClass,
+) {
+  "use strict";
+
+
+  const WrapperClass = WebComponentBaseClass.extend("uxc.integration.thirdparty.@ui5.webcomponents.dist.Title", {
+    metadata:
+{
+  "namespace": "@ui5/webcomponents",
+  "qualifiedNamespace": "uxc.integration.thirdparty.@ui5.webcomponents",
+  "tag": "ui5-title-90cc6878",
+  "interfaces": [],
+  "properties": {
+    "wrappingType": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents.WrappingType",
+      "mapping": "property",
+      "defaultValue": "Normal"
+    },
+    "level": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents.TitleLevel",
+      "mapping": "property",
+      "defaultValue": "H2"
+    },
+    "size": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents.TitleLevel",
+      "mapping": "property",
+      "defaultValue": "H5"
+    },
+    "text": {
+      "type": "string",
+      "mapping": "textContent"
+    },
+    "width": {
+      "type": "sap.ui.core.CSSSize",
+      "mapping": "style"
+    },
+    "height": {
+      "type": "sap.ui.core.CSSSize",
+      "mapping": "style"
+    }
+  },
+  "aggregations": {
+    "content": {
+      "type": "sap.ui.core.Control",
+      "multiple": true
+    }
+  },
+  "associations": {},
+  "events": {},
+  "getters": [],
+  "methods": [],
+  "defaultAggregation": "content",
+  "library": "@ui5/webcomponents.library",
+  "designtime": "@ui5/webcomponents/designtime/Title.designtime"
+}
+  });
+
+
+  return WrapperClass;
+
+});

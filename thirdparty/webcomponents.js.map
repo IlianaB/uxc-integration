@@ -1,0 +1,1 @@
+{"version":3,"file":"webcomponents.js","names":["sap","ui","define","webcomponentsBase","Theme","Icons","i18n","LocaleData"],"sources":["webcomponents-dbg.js"],"mappings":"AAAAA,IAAIC,GAAGC,OAAO,CAAC,iDAAkD,mCAAoC,mCAAoC,kCAAmC,yCAA0C,SAAWC,EAAmBC,EAAOC,EAAOC,EAAMC,GAAc,YAIrR","ignoreList":[]}

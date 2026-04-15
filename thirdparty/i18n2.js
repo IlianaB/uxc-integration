@@ -1,0 +1,2 @@
+sap.ui.define(["exports"],function(e){"use strict";const t=e=>(t,a)=>{t.metadata.i18n||(t.metadata.i18n={}),Object.defineProperty(t,a,{get(){return t.i18nBundles[e]},set(){}}),t.metadata.i18n[a]={bundleName:e,target:t}};e.i=t});
+//# sourceMappingURL=i18n2.js.map

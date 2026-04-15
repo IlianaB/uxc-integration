@@ -1,0 +1,200 @@
+/*!
+ * ${copyright}
+ */
+sap.ui.define([
+  "sap/ui/core/webc/WebComponent",
+  "uxc/integration/thirdparty/@ui5/webcomponents-fiori",
+  "uxc/integration/thirdparty/ShellBar",
+], function(
+  WebComponentBaseClass,
+) {
+  "use strict";
+
+
+  const WrapperClass = WebComponentBaseClass.extend("uxc.integration.thirdparty.@ui5.webcomponents-fiori.dist.ShellBar", {
+    metadata:
+{
+  "namespace": "@ui5/webcomponents-fiori",
+  "qualifiedNamespace": "uxc.integration.thirdparty.@ui5.webcomponents-fiori",
+  "tag": "ui5-shellbar-90cc6878",
+  "interfaces": [],
+  "properties": {
+    "hideSearchButton": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "disableSearchCollapse": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "primaryTitle": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "secondaryTitle": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "notificationsCount": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "showNotifications": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "showProductSwitch": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "accessibilityAttributes": {
+      "type": "object",
+      "mapping": "property",
+      "defaultValue": {}
+    },
+    "showSearchField": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "text": {
+      "type": "string",
+      "mapping": "textContent"
+    },
+    "width": {
+      "type": "sap.ui.core.CSSSize",
+      "mapping": "style"
+    },
+    "height": {
+      "type": "sap.ui.core.CSSSize",
+      "mapping": "style"
+    }
+  },
+  "aggregations": {
+    "assistant": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "assistant"
+    },
+    "items": {
+      "type": "sap.ui.core.Control",
+      "multiple": true
+    },
+    "profile": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "profile"
+    },
+    "logo": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "logo"
+    },
+    "menuItems": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "menuItems"
+    },
+    "searchField": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "searchField"
+    },
+    "startButton": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "startButton"
+    },
+    "content": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "content"
+    }
+  },
+  "associations": {},
+  "events": {
+    "notificationsClick": {
+      "parameters": {
+        "targetRef": {
+          "type": "HTMLElement"
+        }
+      }
+    },
+    "profileClick": {
+      "parameters": {
+        "targetRef": {
+          "type": "HTMLElement"
+        }
+      }
+    },
+    "productSwitchClick": {
+      "parameters": {
+        "targetRef": {
+          "type": "HTMLElement"
+        }
+      }
+    },
+    "logoClick": {
+      "parameters": {
+        "targetRef": {
+          "type": "HTMLElement"
+        }
+      }
+    },
+    "menuItemClick": {
+      "parameters": {
+        "item": {
+          "type": "HTMLElement"
+        }
+      }
+    },
+    "searchButtonClick": {
+      "parameters": {
+        "targetRef": {
+          "type": "HTMLElement"
+        },
+        "searchFieldVisible": {
+          "type": "boolean"
+        }
+      }
+    },
+    "searchFieldToggle": {
+      "parameters": {
+        "expanded": {
+          "type": "boolean"
+        }
+      }
+    },
+    "contentItemVisibilityChange": {
+      "parameters": {
+        "array": {
+          "type": "HTMLElement"
+        }
+      }
+    }
+  },
+  "getters": [
+    "logoDomRef",
+    "notificationsDomRef",
+    "overflowDomRef",
+    "profileDomRef",
+    "productSwitchDomRef"
+  ],
+  "methods": [
+    "closeOverflow",
+    "getSearchButtonDomRef"
+  ],
+  "defaultAggregation": "items",
+  "library": "@ui5/webcomponents-fiori.library",
+  "designtime": "@ui5/webcomponents-fiori/designtime/ShellBar.designtime"
+}
+  });
+
+
+  return WrapperClass;
+
+});

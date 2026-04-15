@@ -1,0 +1,113 @@
+/*!
+ * ${copyright}
+ */
+sap.ui.define([
+  "sap/ui/core/webc/WebComponent",
+  "sap/ui/core/EnabledPropagator",
+  "uxc/integration/thirdparty/@ui5/webcomponents-fiori",
+  "uxc/integration/thirdparty/UserSettingsItem",
+], function(
+  WebComponentBaseClass,
+  EnabledPropagator,
+) {
+  "use strict";
+
+
+  const WrapperClass = WebComponentBaseClass.extend("uxc.integration.thirdparty.@ui5.webcomponents-fiori.dist.UserSettingsItem", {
+    metadata:
+{
+  "namespace": "@ui5/webcomponents-fiori",
+  "qualifiedNamespace": "uxc.integration.thirdparty.@ui5.webcomponents-fiori",
+  "tag": "ui5-user-settings-item-90cc6878",
+  "interfaces": [],
+  "properties": {
+    "text": {
+      "type": "string",
+      "mapping": "property",
+      "defaultValue": ""
+    },
+    "tooltip": {
+      "type": "string",
+      "mapping": "property",
+      "defaultValue": ""
+    },
+    "headerText": {
+      "type": "string",
+      "mapping": "property",
+      "defaultValue": ""
+    },
+    "selected": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "enabled": {
+      "type": "boolean",
+      "defaultValue": "true",
+      "mapping": {
+        "type": "property",
+        "to": "disabled",
+        "formatter": "_mapEnabled"
+      }
+    },
+    "loading": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "loadingReason": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "icon": {
+      "type": "string",
+      "mapping": "property",
+      "defaultValue": "globe"
+    },
+    "accessibleName": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "width": {
+      "type": "sap.ui.core.CSSSize",
+      "mapping": "style"
+    },
+    "height": {
+      "type": "sap.ui.core.CSSSize",
+      "mapping": "style"
+    }
+  },
+  "aggregations": {
+    "tabs": {
+      "type": "sap.ui.core.Control",
+      "multiple": true
+    },
+    "pages": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "pages"
+    }
+  },
+  "associations": {},
+  "events": {
+    "selectionChange": {
+      "parameters": {
+        "view": {
+          "type": "any"
+        }
+      }
+    }
+  },
+  "getters": [],
+  "methods": [],
+  "defaultAggregation": "tabs",
+  "library": "@ui5/webcomponents-fiori.library",
+  "designtime": "@ui5/webcomponents-fiori/designtime/UserSettingsItem.designtime"
+}
+  });
+
+  EnabledPropagator.call(WrapperClass.prototype);
+
+  return WrapperClass;
+
+});

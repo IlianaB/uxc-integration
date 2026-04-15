@@ -1,0 +1,2 @@
+sap.ui.define(["uxc/integration/thirdparty/da2","uxc/integration/thirdparty/Theme","uxc/integration/thirdparty/Icons","uxc/integration/thirdparty/i18n"],function(e,t,r,i){"use strict";const n=Object.isFrozen(e.defExp)?Object.assign({},e.defExp?.default||e.defExp):e.defExp;Object.keys(e.namedExports||{}).filter(e=>!n[e]).forEach(t=>n[t]=e.namedExports[t]);Object.defineProperty(n,"__"+"esModule",{value:true});var a=Object.isFrozen(e.defExp)?Object.freeze(n):n;return a});
+//# sourceMappingURL=da.js.map

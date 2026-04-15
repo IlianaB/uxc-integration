@@ -1,0 +1,150 @@
+/*!
+ * ${copyright}
+ */
+sap.ui.define([
+  "uxc/integration/thirdparty/@ui5/webcomponents/dist/Popover",
+  "uxc/integration/thirdparty/@ui5/webcomponents",
+  "uxc/integration/thirdparty/ResponsivePopover",
+], function(
+  WebComponentBaseClass,
+) {
+  "use strict";
+
+
+  const WrapperClass = WebComponentBaseClass.extend("uxc.integration.thirdparty.@ui5.webcomponents.dist.ResponsivePopover", {
+    metadata:
+{
+  "namespace": "@ui5/webcomponents",
+  "qualifiedNamespace": "uxc.integration.thirdparty.@ui5.webcomponents",
+  "tag": "ui5-responsive-popover-90cc6878",
+  "interfaces": [],
+  "properties": {
+    "headerText": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "placement": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents.PopoverPlacement",
+      "mapping": "property",
+      "defaultValue": "End"
+    },
+    "horizontalAlign": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents.PopoverHorizontalAlign",
+      "mapping": "property",
+      "defaultValue": "Center"
+    },
+    "verticalAlign": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents.PopoverVerticalAlign",
+      "mapping": "property",
+      "defaultValue": "Center"
+    },
+    "modal": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "hideArrow": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "allowTargetOverlap": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "initialFocus": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "preventFocusRestore": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "accessibleName": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "accessibleRole": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents.PopupAccessibleRole",
+      "mapping": "property",
+      "defaultValue": "Dialog"
+    },
+    "preventInitialFocus": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "open": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    }
+  },
+  "aggregations": {
+    "header": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "header"
+    },
+    "footer": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "footer"
+    },
+    "content": {
+      "type": "sap.ui.core.Control",
+      "multiple": true
+    }
+  },
+  "associations": {
+    "opener": {
+      "type": "sap.ui.core.Control",
+      "mapping": {
+        "type": "property",
+        "to": "opener"
+      }
+    },
+    "ariaLabelledBy": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "mapping": {
+        "type": "property",
+        "to": "accessibleNameRef",
+        "formatter": "_getAriaLabelledByForRendering"
+      }
+    }
+  },
+  "events": {
+    "beforeOpen": {
+      "parameters": {}
+    },
+    "open": {
+      "parameters": {}
+    },
+    "beforeClose": {
+      "parameters": {
+        "escPressed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "close": {
+      "parameters": {}
+    }
+  },
+  "getters": [],
+  "methods": [
+    "applyFocus"
+  ],
+  "defaultAggregation": "content",
+  "library": "@ui5/webcomponents.library",
+  "designtime": "@ui5/webcomponents/designtime/ResponsivePopover.designtime"
+}
+  });
+
+
+  return WrapperClass;
+
+});

@@ -1,0 +1,64 @@
+/*!
+ * ${copyright}
+ */
+sap.ui.define([
+  "sap/ui/core/webc/WebComponent",
+  "uxc/integration/thirdparty/@ui5/webcomponents-fiori",
+  "uxc/integration/thirdparty/UserSettingsView",
+], function(
+  WebComponentBaseClass,
+) {
+  "use strict";
+
+
+  const WrapperClass = WebComponentBaseClass.extend("uxc.integration.thirdparty.@ui5.webcomponents-fiori.dist.UserSettingsView", {
+    metadata:
+{
+  "namespace": "@ui5/webcomponents-fiori",
+  "qualifiedNamespace": "uxc.integration.thirdparty.@ui5.webcomponents-fiori",
+  "tag": "ui5-user-settings-view-90cc6878",
+  "interfaces": [],
+  "properties": {
+    "text": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "selected": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "secondary": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "width": {
+      "type": "sap.ui.core.CSSSize",
+      "mapping": "style"
+    },
+    "height": {
+      "type": "sap.ui.core.CSSSize",
+      "mapping": "style"
+    }
+  },
+  "aggregations": {
+    "content": {
+      "type": "sap.ui.core.Control",
+      "multiple": true
+    }
+  },
+  "associations": {},
+  "events": {},
+  "getters": [],
+  "methods": [],
+  "defaultAggregation": "content",
+  "library": "@ui5/webcomponents-fiori.library",
+  "designtime": "@ui5/webcomponents-fiori/designtime/UserSettingsView.designtime"
+}
+  });
+
+
+  return WrapperClass;
+
+});

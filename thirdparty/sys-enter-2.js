@@ -1,0 +1,2 @@
+sap.ui.define(["exports","uxc/integration/thirdparty/Theme","uxc/integration/thirdparty/information"],function(t,i,n){"use strict";var r="sys-enter-2";t.iconSysEnter2=r});
+//# sourceMappingURL=sys-enter-2.js.map

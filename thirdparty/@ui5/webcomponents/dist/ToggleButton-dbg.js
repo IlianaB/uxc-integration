@@ -1,0 +1,134 @@
+/*!
+ * ${copyright}
+ */
+sap.ui.define([
+  "uxc/integration/thirdparty/@ui5/webcomponents/dist/Button",
+  "sap/ui/core/EnabledPropagator",
+  "uxc/integration/thirdparty/@ui5/webcomponents",
+  "uxc/integration/thirdparty/ToggleButton",
+], function(
+  WebComponentBaseClass,
+  EnabledPropagator,
+) {
+  "use strict";
+
+
+  const WrapperClass = WebComponentBaseClass.extend("uxc.integration.thirdparty.@ui5.webcomponents.dist.ToggleButton", {
+    metadata:
+{
+  "namespace": "@ui5/webcomponents",
+  "qualifiedNamespace": "uxc.integration.thirdparty.@ui5.webcomponents",
+  "tag": "ui5-toggle-button-90cc6878",
+  "interfaces": [],
+  "properties": {
+    "pressed": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "design": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents.ButtonDesign",
+      "mapping": "property",
+      "defaultValue": "Default"
+    },
+    "enabled": {
+      "type": "boolean",
+      "defaultValue": "true",
+      "mapping": {
+        "type": "property",
+        "to": "disabled",
+        "formatter": "_mapEnabled"
+      }
+    },
+    "icon": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "endIcon": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "submits": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "tooltip": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "accessibleName": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "accessibilityAttributes": {
+      "type": "object",
+      "mapping": "property",
+      "defaultValue": {}
+    },
+    "accessibleDescription": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "type": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents.ButtonType",
+      "mapping": "property",
+      "defaultValue": "Button"
+    },
+    "accessibleRole": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents.ButtonAccessibleRole",
+      "mapping": "property",
+      "defaultValue": "Button"
+    }
+  },
+  "aggregations": {
+    "badge": {
+      "type": "uxc.integration.thirdparty.@ui5.webcomponents.dist.ButtonBadge",
+      "multiple": true,
+      "slot": "badge"
+    }
+  },
+  "associations": {
+    "ariaLabelledBy": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "mapping": {
+        "type": "property",
+        "to": "accessibleNameRef",
+        "formatter": "_getAriaLabelledByForRendering"
+      }
+    }
+  },
+  "events": {
+    "click": {
+      "parameters": {
+        "originalEvent": {
+          "type": "event"
+        },
+        "altKey": {
+          "type": "boolean"
+        },
+        "ctrlKey": {
+          "type": "boolean"
+        },
+        "metaKey": {
+          "type": "boolean"
+        },
+        "shiftKey": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "getters": [],
+  "methods": [],
+  "library": "@ui5/webcomponents.library",
+  "designtime": "@ui5/webcomponents/designtime/ToggleButton.designtime"
+}
+  });
+
+  EnabledPropagator.call(WrapperClass.prototype);
+
+  return WrapperClass;
+
+});

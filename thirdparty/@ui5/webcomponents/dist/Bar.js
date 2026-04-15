@@ -1,0 +1,5 @@
+/*!
+ * ${copyright}
+ */
+sap.ui.define(["sap/ui/core/webc/WebComponent","uxc/integration/thirdparty/@ui5/webcomponents","uxc/integration/thirdparty/Bar"],function(t){"use strict";const e=t.extend("uxc.integration.thirdparty.@ui5.webcomponents.dist.Bar",{metadata:{namespace:"@ui5/webcomponents",qualifiedNamespace:"uxc.integration.thirdparty.@ui5.webcomponents",tag:"ui5-bar-90cc6878",interfaces:[],properties:{design:{type:"uxc.integration.thirdparty.@ui5.webcomponents.BarDesign",mapping:"property",defaultValue:"Header"},text:{type:"string",mapping:"textContent"},width:{type:"sap.ui.core.CSSSize",mapping:"style"},height:{type:"sap.ui.core.CSSSize",mapping:"style"}},aggregations:{startContent:{type:"sap.ui.core.Control",multiple:true,slot:"startContent"},middleContent:{type:"sap.ui.core.Control",multiple:true},endContent:{type:"sap.ui.core.Control",multiple:true,slot:"endContent"}},associations:{},events:{},getters:[],methods:[],defaultAggregation:"middleContent",library:"@ui5/webcomponents.library",designtime:"@ui5/webcomponents/designtime/Bar.designtime"}});return e});
+//# sourceMappingURL=Bar.js.map
