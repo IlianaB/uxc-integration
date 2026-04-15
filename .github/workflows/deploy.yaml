@@ -27,6 +27,9 @@ jobs:
       - name: Build
         run: npm run build:opt
 
+      - name: Generate sap-ui-version.json
+        run: node scripts/generate-version-info.js
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
